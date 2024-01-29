@@ -2,7 +2,7 @@
 
 void Menu::WypiszMenu()
 {
-	cout << "Wybierz funkcje:" << endl;
+	cout << endl<< "--------------------------- MENU ------------------" << endl;
 	cout << "1. Wczytaj plik csv" << endl;
 	cout << "2. Zapisz dane do pliku binarnego" << endl;
 	cout << "3. Odczytaj dane z pliku binarnego" << endl;
@@ -24,6 +24,7 @@ void Menu::WypiszMenu()
 	cout << "19. Wyszukaj rekordy" << endl;
 	cout << "20. Wypisz dane" << endl;
 	cout << "0. Wyjdz z programu" << endl;
+	cout << "----------------------------------------------------" << endl;
 }
 
 
@@ -31,19 +32,18 @@ void Menu::WybierzOpcje()
 {
 	int wybor;
 	do {
-
-
 		string nazwa_pliku;
 		string data_od, data_do, data_od1, data_do1, data_od2, data_do2, kategoria;
 		string godzina_od, godzina_do, godzina2_od, godzina2_do;
 		double wartosc, tolerancja;
 		vector<Pomiar> wyniki;
+		cout <<endl<< "Wybierz opcje: ";
 		cin >> wybor;
 		switch (wybor)
 		{
 		case 1: // wczytanie pliku csv
 
-			cout << "Podaj nazwe pliku w formacie 'x.csv':" << endl;
+			cout << "Podaj nazwe pliku w formacie 'x.csv':";
 			cin >> nazwa_pliku;
 			dane->WczytajPlik(nazwa_pliku);
 
@@ -54,12 +54,12 @@ void Menu::WybierzOpcje()
 
 			break;
 		case 2: // zapis do pliku binarnego
-			cout << "Podaj nazwe pliku do zapisu, w formacie 'x.bin':" << endl;
+			cout << "Podaj nazwe pliku do zapisu, w formacie 'x.bin':";
 			cin >> nazwa_pliku;
 			this->dane->ZapiszBinarnie(nazwa_pliku);
 			break;
 		case 3: // odczyt z pliku binarnego
-			cout << "Podaj nazwe pliku do odczytu binarnego: " << endl;
+			cout << "Podaj nazwe pliku do odczytu binarnego: ";
 			cin >> nazwa_pliku;
 			dane->OdczytajBinarnie(nazwa_pliku);
 			for (const auto& pomiar : dane->GetPomiary())
@@ -68,7 +68,7 @@ void Menu::WybierzOpcje()
 			}
 			break;
 		case 4: // suma autokonsumpcji
-			cout << "Podaj przedzial dat i godzin w formacie dd.mm.rrrr hh:mm, np. 3.10.2021 00:00" << endl;
+			cout << "Podaj przedzial dat i godzin w formacie dd.mm.rrrr hh:mm, np. 3.10.2021 00:00";
 			cout << "Data i godzina od: ";
 			cin >> data_od1;
 			cin >> godzina_od;
@@ -78,7 +78,7 @@ void Menu::WybierzOpcje()
 			cout << operacje->SumaAutokonsumpcji((data_od1 + " " + godzina_od), (data_do1 + " " + godzina_do));
 			break;
 		case 5: // suma eksportu
-			cout << "Podaj przedzial dat i godzin w formacie dd.mm.rrrr hh:mm, np. 3.10.2021 00:00" << endl;
+			cout << "Podaj przedzial dat i godzin w formacie dd.mm.rrrr hh:mm, np. 3.10.2021 00:00";
 			cout << "Data i godzina od: ";
 			cin >> data_od1;
 			cin >> godzina_od;
@@ -88,7 +88,7 @@ void Menu::WybierzOpcje()
 			cout << operacje->SumaEksportu((data_od1 + " " + godzina_od), (data_do1 + " " + godzina_do));
 			break;
 		case 6: // suma importu
-			cout << "Podaj przedzial dat i godzin w formacie dd.mm.rrrr hh:mm, np. 3.10.2021 00:00" << endl;
+			cout << "Podaj przedzial dat i godzin w formacie dd.mm.rrrr hh:mm, np. 3.10.2021 00:00";
 			cout << "Data i godzina od: ";
 			cin >> data_od1;
 			cin >> godzina_od;
@@ -98,7 +98,7 @@ void Menu::WybierzOpcje()
 			cout << operacje->SumaImportu((data_od1 + " " + godzina_od), (data_do1 + " " + godzina_do));
 			break;
 		case 7: // suma poboru
-			cout << "Podaj przedzial dat i godzin w formacie dd.mm.rrrr hh:mm, np. 3.10.2021 00:00" << endl;
+			cout << "Podaj przedzial dat i godzin w formacie dd.mm.rrrr hh:mm, np. 3.10.2021 00:00";
 			cout << "Data i godzina od: ";
 			cin >> data_od1;
 			cin >> godzina_od;
@@ -108,7 +108,7 @@ void Menu::WybierzOpcje()
 			cout << operacje->SumaPoboru((data_od1 + " " + godzina_od), (data_do1 + " " + godzina_do));
 			break;
 		case 8: // suma produkcji
-			cout << "Podaj przedzial dat i godzin w formacie dd.mm.rrrr hh:mm, np. 3.10.2021 00:00" << endl;
+			cout << "Podaj przedzial dat i godzin w formacie dd.mm.rrrr hh:mm, np. 3.10.2021 00:00";
 			cout << "Data i godzina od: ";
 			cin >> data_od1;
 			cin >> godzina_od;
@@ -118,7 +118,7 @@ void Menu::WybierzOpcje()
 			cout << operacje->SumaProdukcji((data_od1 + " " + godzina_od), (data_do1 + " " + godzina_do));
 			break;
 		case 9: // srednia autokonsumpcji
-			cout << "Podaj przedzial dat i godzin w formacie dd.mm.rrrr hh:mm, np. 3.10.2021 00:00" << endl;
+			cout << "Podaj przedzial dat i godzin w formacie dd.mm.rrrr hh:mm, np. 3.10.2021 00:00";
 			cout << "Data i godzina od: ";
 			cin >> data_od1;
 			cin >> godzina_od;
@@ -128,7 +128,7 @@ void Menu::WybierzOpcje()
 			cout << operacje->SredniaAutokonsumpcja((data_od1 + " " + godzina_od), (data_do1 + " " + godzina_do));
 			break;
 		case 10: // srednia eksportu
-			cout << "Podaj przedzial dat i godzin w formacie dd.mm.rrrr hh:mm, np. 3.10.2021 00:00" << endl;
+			cout << "Podaj przedzial dat i godzin w formacie dd.mm.rrrr hh:mm, np. 3.10.2021 00:00";
 			cout << "Data i godzina od: ";
 			cin >> data_od1;
 			cin >> godzina_od;
@@ -138,7 +138,7 @@ void Menu::WybierzOpcje()
 			cout << operacje->SredniaEksport((data_od1 + " " + godzina_od), (data_do1 + " " + godzina_do));
 			break;
 		case 11: // srednia importu
-			cout << "Podaj przedzial dat i godzin w formacie dd.mm.rrrr hh:mm, np. 3.10.2021 00:00" << endl;
+			cout << "Podaj przedzial dat i godzin w formacie dd.mm.rrrr hh:mm, np. 3.10.2021 00:00";
 			cout << "Data i godzina od: ";
 			cin >> data_od1;
 			cin >> godzina_od;
@@ -148,7 +148,7 @@ void Menu::WybierzOpcje()
 			cout << operacje->SredniaImport((data_od1 + " " + godzina_od), (data_do1 + " " + godzina_do));
 			break;
 		case 12: // srednia poboru
-			cout << "Podaj przedzial dat i godzin w formacie dd.mm.rrrr hh:mm, np. 3.10.2021 00:00" << endl;
+			cout << "Podaj przedzial dat i godzin w formacie dd.mm.rrrr hh:mm, np. 3.10.2021 00:00";
 			cout << "Data i godzina od: ";
 			cin >> data_od1;
 			cin >> godzina_od;
@@ -158,7 +158,7 @@ void Menu::WybierzOpcje()
 			cout << operacje->SredniaPobor((data_od1 + " " + godzina_od), (data_do1 + " " + godzina_do));
 			break;
 		case 13: // srednia produkcji
-			cout << "Podaj przedzial dat i godzin w formacie dd.mm.rrrr hh:mm, np. 3.10.2021 00:00" << endl;
+			cout << "Podaj przedzial dat i godzin w formacie dd.mm.rrrr hh:mm, np. 3.10.2021 00:00";
 			cout << "Data i godzina od: ";
 			cin >> data_od1;
 			cin >> godzina_od;
@@ -168,14 +168,14 @@ void Menu::WybierzOpcje()
 			cout << operacje->SredniaProdukcja((data_od1 + " " + godzina_od), (data_do1 + " " + godzina_do));
 			break;
 		case 14: // porownywanie autokonsumpcji
-			cout << "Podaj przedzial dat i godzin w formacie dd.mm.rrrr hh:mm, np. 3.10.2021 00:00" << endl;
+			cout << "Podaj przedzial dat i godzin w formacie dd.mm.rrrr hh:mm, np. 3.10.2021 00:00";
 			cout << "Data i godzina od: ";
 			cin >> data_od1;
 			cin >> godzina_od;
 			cout << "Data i godzina do: ";
 			cin >> data_do1;
 			cin >> godzina_do;
-			cout << "Podaj drugi przedzial: " << endl;
+			cout << "Podaj drugi przedzial: ";
 			cout << "Data i godzina od: ";
 			cin >> data_od2;
 			cin >> godzina2_od;
@@ -189,7 +189,7 @@ void Menu::WybierzOpcje()
 			cout << operacje->PorownajAutokonsumpcje(data_od1, data_do1, data_od2, data_do2);
 			break;
 		case 15: // porownanie eksportu
-			cout << "Podaj przedzial dat i godzin w formacie dd.mm.rrrr hh:mm, np. 3.10.2021 00:00" << endl;
+			cout << "Podaj przedzial dat i godzin w formacie dd.mm.rrrr hh:mm, np. 3.10.2021 00:00";
 			cout << "Data i godzina od: ";
 			cin >> data_od1;
 			cin >> godzina_od;
@@ -210,14 +210,14 @@ void Menu::WybierzOpcje()
 			cout << operacje->PorownajEksport(data_od1, data_do1, data_od2, data_do2);
 			break;
 		case 16: // porownanie importu
-			cout << "Podaj przedzial dat i godzin w formacie dd.mm.rrrr hh:mm, np. 3.10.2021 00:00" << endl;
+			cout << "Podaj przedzial dat i godzin w formacie dd.mm.rrrr hh:mm, np. 3.10.2021 00:00";
 			cout << "Data i godzina od: ";
 			cin >> data_od1;
 			cin >> godzina_od;
 			cout << "Data i godzina do: ";
 			cin >> data_do1;
 			cin >> godzina_do;
-			cout << "Podaj drugi przedzial: " << endl;
+			cout << "Podaj drugi przedzial: ";
 			cout << "Data i godzina od: ";
 			cin >> data_od2;
 			cin >> godzina2_od;
@@ -231,14 +231,14 @@ void Menu::WybierzOpcje()
 			cout << operacje->PorownajImport(data_od1, data_do1, data_od2, data_do2);
 			break;
 		case 17: // porownanie poboru
-			cout << "Podaj przedzial dat i godzin w formacie dd.mm.rrrr hh:mm, np. 3.10.2021 00:00" << endl;
+			cout << "Podaj przedzial dat i godzin w formacie dd.mm.rrrr hh:mm, np. 3.10.2021 00:00";
 			cout << "Data i godzina od: ";
 			cin >> data_od1;
 			cin >> godzina_od;
 			cout << "Data i godzina do: ";
 			cin >> data_do1;
 			cin >> godzina_do;
-			cout << "Podaj drugi przedzial: " << endl;
+			cout << "Podaj drugi przedzial: ";
 			cout << "Data i godzina od: ";
 			cin >> data_od2;
 			cin >> godzina2_od;
@@ -252,14 +252,14 @@ void Menu::WybierzOpcje()
 			cout << operacje->PorownajPobor(data_od1, data_do1, data_od2, data_do2);
 			break;
 		case 18: // porownanie produkcji
-			cout << "Podaj przedzial dat i godzin w formacie dd.mm.rrrr hh:mm, np. 3.10.2021 00:00" << endl;
+			cout << "Podaj przedzial dat i godzin w formacie dd.mm.rrrr hh:mm, np. 3.10.2021 00:00";
 			cout << "Data i godzina od: ";
 			cin >> data_od1;
 			cin >> godzina_od;
 			cout << "Data i godzina do: ";
 			cin >> data_do1;
 			cin >> godzina_do;
-			cout << "Podaj drugi przedzial: " << endl;
+			cout << "Podaj drugi przedzial: ";
 			cout << "Data i godzina od: ";
 			cin >> data_od2;
 			cin >> godzina2_od;
@@ -277,16 +277,22 @@ void Menu::WybierzOpcje()
 			cout << "Podaj przedzial dat i godzin w formacie dd.mm.rrrr hh:mm, np. 3.10.2021 00:00" << endl;
 			cout << "Data i godzina od: ";
 			cin >> data_od1;
+			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
 			cout << "Data i godzina do: ";
 			cin >> data_do1;
-			cout << "Podaj wartosc do szukania: " << endl;
+			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+			cout << "Podaj wartosc do szukania: ";
 			cin >> wartosc;
-			cout << "Podaj tolerancje: " << endl;
+			cout << "Podaj tolerancje: ";
 			cin >> tolerancja;
-			cout << "Podaj kategorie (autokonsumpcja, eksport, import, pobor lub produkcja): " << endl;
+			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+
+			cout << "Podaj kategorie (autokonsumpcja, eksport, import, pobor lub produkcja): ";
 			cin >> kategoria;
 			wyniki = operacje->WyszukajRekordy(wartosc, tolerancja, data_od1, data_do1, kategoria);
-			cout << "Znalezione rekordy: " << endl;
+			cout << "Znalezione rekordy: ";
 			cout << "-----------------------" << endl;
 			for (const auto& rekord : wyniki)
 			{
@@ -294,7 +300,7 @@ void Menu::WybierzOpcje()
 			}
 			break;
 		case 20: // wypisz dane
-			cout << "Podaj przedzial dat i godzin w formacie dd.mm.rrrr hh:mm, np. 3.10.2021 00:00" << endl;
+			cout << "Podaj przedzial dat i godzin w formacie dd.mm.rrrr hh:mm, np. 3.10.2021 00:00";
 			cout << "Data i godzina od: ";
 			cin >> data_od1;
 			cin >> godzina_od;

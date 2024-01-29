@@ -24,6 +24,7 @@
     <ProjectGuid>{435a5afc-edc6-4931-a426-443a62dfd61d}</ProjectGuid>
     <RootNamespace>zadanie6csv</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>DaneCSV</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

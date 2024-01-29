@@ -1,0 +1,6 @@
+Pusta linia nr 2712: 
+Nieprawidlowe pole, linia nr 3627: 07.10.2021 17:30,"xxxx","xxxx","yyyy","yyyy"
+Pusta linia nr 3653: 
+Powtorzona linia nr 4252: 13.10.2021 19:00,"0","0","637.1784","637.1784","0"
+Nieprawidlowe pole, linia nr 4399: 15.10.2021 11:00,"363.4795","0","363.4795","4473"
+Pusta linia nr 5607: 

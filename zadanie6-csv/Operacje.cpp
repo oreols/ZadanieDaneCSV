@@ -45,7 +45,7 @@ double Operacje::SumaAutokonsumpcji(string data_od, string data_do)
 		}
 	}
 
-
+	cout << std::fixed << std::setprecision(1);
 	return suma;
 }
 
@@ -92,7 +92,7 @@ double Operacje::SumaEksportu(string data_od, string data_do)
 		}
 	}
 
-
+	cout << std::fixed << std::setprecision(1);
 	return suma;
 }
 
@@ -138,6 +138,7 @@ double Operacje::SumaImportu(string data_od, string data_do)
 			}
 		}
 	}
+	cout << std::fixed << std::setprecision(1);
 	return suma;
 }
 
@@ -184,6 +185,7 @@ double Operacje::SumaPoboru(string data_od, string data_do)
 			}
 		}
 	}
+	cout << std::fixed << std::setprecision(1);
 	return suma;
 }
 
@@ -229,6 +231,7 @@ double Operacje::SumaProdukcji(string data_od, string data_do)
 			}
 		}
 	}
+	cout << std::fixed << std::setprecision(1);
 	return suma;
 
 }
@@ -278,6 +281,7 @@ double Operacje::SredniaAutokonsumpcja(string data_od, string data_do)
 			}
 		}
 	}
+	cout << std::fixed << std::setprecision(1);
 	return suma / licznik;
 }
 
@@ -326,6 +330,7 @@ double Operacje::SredniaEksport(string data_od, string data_do)
 			}
 		}
 	}
+	cout << std::fixed << std::setprecision(1);
 	return suma / licznik;
 }
 
@@ -374,6 +379,7 @@ double Operacje::SredniaImport(string data_od, string data_do)
 			}
 		}
 	}
+	cout << std::fixed << std::setprecision(1);
 	return suma / licznik;
 }
 
@@ -422,6 +428,7 @@ double Operacje::SredniaPobor(string data_od, string data_do)
 			}
 		}
 	}
+	cout << std::fixed << std::setprecision(1);
 	return suma / licznik;
 }
 
@@ -470,6 +477,7 @@ double Operacje::SredniaProdukcja(string data_od, string data_do)
 			}
 		}
 	}
+	cout << std::fixed << std::setprecision(1);
 	return suma / licznik;
 }
 
@@ -845,6 +853,7 @@ vector<Pomiar> Operacje::WyszukajRekordy(double wartosc, double tolerancja, stri
 			}
 		}
 	}
+	cout << std::fixed << std::setprecision(1);
 	return wyniki;
 }
 
