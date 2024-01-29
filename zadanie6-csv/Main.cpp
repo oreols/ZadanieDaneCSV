@@ -1,5 +1,4 @@
-﻿
-#include <iostream>
+﻿#include <iostream>
 #include "Dane.h"
 #include "Drzewo.h"
 #include "Operacje.h"
@@ -22,6 +21,6 @@ int main()
 	menu->WybierzOpcje();
 	
 
-    return EXIT_SUCCESS;
+    return 0;
 }
 

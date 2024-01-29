@@ -29,7 +29,7 @@ public:
 		getline(ss, miesiac, '.');
 		getline(ss, rok, ' ');
 		getline(ss, godzina, ':');
-		getline(ss, minuta, ':');
+		getline(ss, minuta, ',');
 		int r = stoi(rok);
 		int m = stoi(miesiac);
 		int d = stoi(dzien);

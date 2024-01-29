@@ -49,35 +49,35 @@ void Dane::WczytajPlik(string nazwa_pliku)
 		// odczytaj linie po linii
 		while (std::getline(plik, line)) {
 			++lineNumber;
-			std::vector<std::string> fields = split(line, ','); // splitowanie linii po przecinkach
+			std::vector<std::string> pole = split(line, ','); // splitowanie linii po przecinkach
 
-			if (fields.size() == 0) // pomijanie pustych linii po splitowaniu
+			if (pole.size() == 0) // pomijanie pustych linii po splitowaniu
 			{
 				badLog << "Pusta linia nr "<<lineNumber<<": " << line << '\n';
 				incorrect++;
 				continue;
 			}
-			if (fields[0] == "Time") {
+			if (pole[0] == "Time") {
 				// pominiecie naglowkow
 				continue;
 			}
 
-			if (fields.size() == 6) {
+			if (pole.size() == 6) {
 				// parsowanie linii do obiektu Pomiar
 				Pomiar pomiar;
-				pomiar._czas = fields[0];
+				pomiar._czas = pole[0];
 				// usuwanie cudzyslowiow
 				for (int i = 1; i < 6; i++) {
-					fields[i].erase(std::remove(fields[i].begin(), fields[i].end(), '"'), fields[i].end());
+					pole[i].erase(std::remove(pole[i].begin(), pole[i].end(), '"'), pole[i].end());
 				}
-				// convert the fields to double
+				// convert the pole to double
 				try
 				{
-					pomiar._autokonsumpcja = std::stod(fields[1]);
-					pomiar._eksport = std::stod(fields[2]);
-					pomiar._import = std::stod(fields[3]);
-					pomiar._pobor = std::stod(fields[4]);
-					pomiar._produkcja = std::stod(fields[5]);
+					pomiar._autokonsumpcja = std::stod(pole[1]);
+					pomiar._eksport = std::stod(pole[2]);
+					pomiar._import = std::stod(pole[3]);
+					pomiar._pobor = std::stod(pole[4]);
+					pomiar._produkcja = std::stod(pole[5]);
 				}
 				catch (std::invalid_argument& e)
 				{
