@@ -16,7 +16,7 @@ private:
 	vector<Pomiar> pomiary;
 
 public:
-	void WczytajPlikCSV(string nazwa_pliku);
+	void WczytajPlik(string nazwa_pliku);
 	void ZapiszBinarnie(string nazwa_pliku);
 	void OdczytajBinarnie(string nazwa_pliku);
 	vector<Pomiar> GetPomiary();

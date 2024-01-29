@@ -24,35 +24,37 @@ std::vector<std::string> split(std::string s, char delim) {
 
 
 
-void Dane::WczytajPlikCSV(string nazwa_pliku)
+void Dane::WczytajPlik(string nazwa_pliku)
 {
 	std::ifstream plik(nazwa_pliku);
 	std::set<Pomiar> uniquePomiary;
 
-	int poprawne = 0, niepoprawne = 0;
+	int correct = 0, incorrect = 0;
 
 	time_t t = time(nullptr);
 	tm* now = localtime(&t);
 	char buffer[80];
 	strftime(buffer, 80, "%Y-%m-%d_%H-%M-%S", now);
 
-	string bad_log_fileName = "log_error_" + string(buffer) + ".txt";
-	string good_log_fileName = "log_" + string(buffer) + ".txt";
-	ofstream badLog(bad_log_fileName);
-	ofstream goodLog(good_log_fileName);
+	string errorLogFile = "log_error_" + string(buffer) + ".txt";
+	string correctLogFile = "log_" + string(buffer) + ".txt";
+	ofstream badLog(errorLogFile);
+	ofstream goodLog(correctLogFile);
 
 
 	if (plik.is_open()) {
 		std::string line;
+		int lineNumber = 0; //zmienna sledzaca nr linii
 
 		// odczytaj linie po linii
 		while (std::getline(plik, line)) {
+			++lineNumber;
 			std::vector<std::string> fields = split(line, ','); // splitowanie linii po przecinkach
 
 			if (fields.size() == 0) // pomijanie pustych linii po splitowaniu
 			{
-				badLog << "Pusta linia: " << line << '\n';
-				niepoprawne++;
+				badLog << "Pusta linia nr "<<lineNumber<<": " << line << '\n';
+				incorrect++;
 				continue;
 			}
 			if (fields[0] == "Time") {
@@ -79,22 +81,22 @@ void Dane::WczytajPlikCSV(string nazwa_pliku)
 				}
 				catch (std::invalid_argument& e)
 				{
-					badLog << "Nieprawidlowe pole: " << line << '\n';
-					niepoprawne++;
+					badLog << "Nieprawidlowe pole, linia nr "<< lineNumber <<": " << line << '\n';
+					incorrect++;
 				}
 				if (uniquePomiary.find(pomiar) != uniquePomiary.end()) {
 
-					badLog << "Duplikat: " << line << "\n";
-					niepoprawne++;
+					badLog << "Powtorzona linia nr " << lineNumber << ": " << line << "\n";
+					incorrect++;
 				}
 				else {
-					poprawne++;
+					correct++;
 					uniquePomiary.insert(pomiar);
 				}
 			}
 			else {
-				badLog << "Nieprawidlowe pole: " << line << '\n';
-				niepoprawne++;
+				badLog << "Nieprawidlowe pole, linia nr " << lineNumber << ": " << line << '\n';
+				incorrect++;
 				continue;
 			}
 			goodLog << line << '\n';
@@ -103,7 +105,7 @@ void Dane::WczytajPlikCSV(string nazwa_pliku)
 		badLog.close();
 	}
 	pomiary.assign(uniquePomiary.begin(), uniquePomiary.end());
-	cout << "Poprawne: " << poprawne << "\nNiepoprawne: " << niepoprawne << "\n";
+	std::cout << "Poprawne: " << correct << "\nNiepoprawne: " << incorrect << "\n";
 }
 
 void Dane::ZapiszBinarnie(string nazwa_pliku)
@@ -126,7 +128,7 @@ void Dane::ZapiszBinarnie(string nazwa_pliku)
 	}
 	else
 	{
-		cout << "Nie udalo sie otworzyc pliku do zapisu" << endl;
+		std::cout << "Nie udalo sie otworzyc pliku do zapisu" << endl;
 	}
 }
 

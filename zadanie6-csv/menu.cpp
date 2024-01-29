@@ -45,7 +45,7 @@ void Menu::WybierzOpcje()
 
 			cout << "Podaj nazwe pliku w formacie 'x.csv':" << endl;
 			cin >> nazwa_pliku;
-			dane->WczytajPlikCSV(nazwa_pliku);
+			dane->WczytajPlik(nazwa_pliku);
 
 			for (const auto& pomiar : dane->GetPomiary())
 			{
