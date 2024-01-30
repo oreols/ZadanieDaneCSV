@@ -55,107 +55,107 @@ void Menu::WybierzOpcje()
 
 			break;
 		case 2: // suma autokonsumpcji
-			cout << "Przedzial DD.MM.RRRR MM:HH (1.10.2020 8:00)" << endl;
+			cout << "Przedzial DD.MM.RRRR HH:MM (1.10.2020 8:00)" << endl;
 			cout << "OD: ";
 			cin >> data_od1;
 			cin >> godzina_od;
 			cout << "DO: ";
 			cin >> data_do1;
 			cin >> godzina_do;
-			cout << "Suma autokonsumpcji: "<< operacje->SumaAutokonsumpcji((data_od1 + " " + godzina_od), (data_do1 + " " + godzina_do));
+			cout << "Suma autokonsumpcji: "<< operacje->SumaAutokonsumpcji((data_od1 + " " + godzina_od), (data_do1 + " " + godzina_do))<<endl;
 			break;
 		case 3: // suma eksportu
-			cout << "Przedzial DD.MM.RRRR MM:HH (1.10.2020 8:00)" << endl;
+			cout << "Przedzial DD.MM.RRRR HH:MM (1.10.2020 8:00)" << endl;
 			cout << "OD: ";
 			cin >> data_od1;
 			cin >> godzina_od;
 			cout << "DO: ";
 			cin >> data_do1;
 			cin >> godzina_do;
-			cout << "Suma eksportu: " << operacje->SumaEksportu((data_od1 + " " + godzina_od), (data_do1 + " " + godzina_do));
+			cout << "Suma eksportu: " << operacje->SumaEksportu((data_od1 + " " + godzina_od), (data_do1 + " " + godzina_do)) << endl;
 			break;
 		case 4: // suma importu
-			cout << "Przedzial DD.MM.RRRR MM:HH (1.10.2020 8:00)"<<endl;
+			cout << "Przedzial DD.MM.RRRR HH:MM (1.10.2020 8:00)"<<endl;
 			cout << "OD: ";
 			cin >> data_od1;
 			cin >> godzina_od;
 			cout << "DO: ";
 			cin >> data_do1;
 			cin >> godzina_do;
-			cout << "Suma importu: " << operacje->SumaImportu((data_od1 + " " + godzina_od), (data_do1 + " " + godzina_do));
+			cout << "Suma importu: " << operacje->SumaImportu((data_od1 + " " + godzina_od), (data_do1 + " " + godzina_do)) << endl;
 			break;
 		case 5: // suma poboru
-			cout << "Przedzial DD.MM.RRRR MM:HH (1.10.2020 8:00)"<<endl;
+			cout << "Przedzial DD.MM.RRRR HH:MM (1.10.2020 8:00)"<<endl;
 			cout << "OD: ";
 			cin >> data_od1;
 			cin >> godzina_od;
 			cout << "DO: ";
 			cin >> data_do1;
 			cin >> godzina_do;
-			cout << "Suma poboru: " << operacje->SumaPoboru((data_od1 + " " + godzina_od), (data_do1 + " " + godzina_do));
+			cout << "Suma poboru: " << operacje->SumaPoboru((data_od1 + " " + godzina_od), (data_do1 + " " + godzina_do)) << endl;
 			break;
 		case 6: // suma produkcji
-			cout << "Przedzial DD.MM.RRRR MM:HH (1.10.2020 8:00)"<<endl;
+			cout << "Przedzial DD.MM.RRRR HH:MM (1.10.2020 8:00)"<<endl;
 			cout << "OD: ";
 			cin >> data_od1;
 			cin >> godzina_od;
 			cout << "DO: ";
 			cin >> data_do1;
 			cin >> godzina_do;
-			cout << "Suma produkcji: " << operacje->SumaProdukcji((data_od1 + " " + godzina_od), (data_do1 + " " + godzina_do));
+			cout << "Suma produkcji: " << operacje->SumaProdukcji((data_od1 + " " + godzina_od), (data_do1 + " " + godzina_do)) << endl;
 			break;
 		case 7: // srednia autokonsumpcji
-			cout << "Przedzial DD.MM.RRRR MM:HH (1.10.2020 8:00)"<<endl;
+			cout << "Przedzial DD.MM.RRRR HH:MM (1.10.2020 8:00)"<<endl;
 			cout << "OD: ";
 			cin >> data_od1;
 			cin >> godzina_od;
 			cout << "DO: ";
 			cin >> data_do1;
 			cin >> godzina_do;
-			cout << "Srednia suma autokonsumpcji: " << operacje->SredniaAutokonsumpcja((data_od1 + " " + godzina_od), (data_do1 + " " + godzina_do));
+			cout << "Srednia suma autokonsumpcji: " << operacje->SredniaAutokonsumpcja((data_od1 + " " + godzina_od), (data_do1 + " " + godzina_do)) << endl;
 			break;
 		case 8: // srednia eksportu
-			cout << "Przedzial DD.MM.RRRR MM:HH (1.10.2020 8:00)"<<endl;
+			cout << "Przedzial DD.MM.RRRR HH:MM (1.10.2020 8:00)"<<endl;
 			cout << "OD: ";
 			cin >> data_od1;
 			cin >> godzina_od;
 			cout << "DO: ";
 			cin >> data_do1;
 			cin >> godzina_do;
-			cout << "Srednia suma eksportu: " << operacje->SredniaEksport((data_od1 + " " + godzina_od), (data_do1 + " " + godzina_do));
+			cout << "Srednia suma eksportu: " << operacje->SredniaEksport((data_od1 + " " + godzina_od), (data_do1 + " " + godzina_do)) << endl;
 			break;
 		case 9: // srednia importu
-			cout << "Przedzial DD.MM.RRRR MM:HH (1.10.2020 8:00)"<<endl;
+			cout << "Przedzial DD.MM.RRRR HH:MM (1.10.2020 8:00)"<<endl;
 			cout << "OD: ";
 			cin >> data_od1;
 			cin >> godzina_od;
 			cout << "DO: ";
 			cin >> data_do1;
 			cin >> godzina_do;
-			cout << "Srednia suma importu: " << operacje->SredniaImport((data_od1 + " " + godzina_od), (data_do1 + " " + godzina_do));
+			cout << "Srednia suma importu: " << operacje->SredniaImport((data_od1 + " " + godzina_od), (data_do1 + " " + godzina_do)) << endl;
 			break;
 		case 10: // srednia poboru
-			cout << "Przedzial DD.MM.RRRR MM:HH (1.10.2020 8:00)"<<endl;
+			cout << "Przedzial DD.MM.RRRR HH:MM (1.10.2020 8:00)"<<endl;
 			cout << "OD: ";
 			cin >> data_od1;
 			cin >> godzina_od;
 			cout << "DO: ";
 			cin >> data_do1;
 			cin >> godzina_do;
-			cout << "Srednia suma poboru: " << operacje->SredniaPobor((data_od1 + " " + godzina_od), (data_do1 + " " + godzina_do));
+			cout << "Srednia suma poboru: " << operacje->SredniaPobor((data_od1 + " " + godzina_od), (data_do1 + " " + godzina_do)) << endl;
 			break;
 		case 11: // srednia produkcji
-			cout << "Przedzial DD.MM.RRRR MM:HH (1.10.2020 8:00)"<<endl;
+			cout << "Przedzial DD.MM.RRRR HH:MM (1.10.2020 8:00)"<<endl;
 			cout << "OD: ";
 			cin >> data_od1;
 			cin >> godzina_od;
 			cout << "DO: ";
 			cin >> data_do1;
 			cin >> godzina_do;
-			cout << "Srednia suma produkcji: " << operacje->SredniaProdukcja((data_od1 + " " + godzina_od), (data_do1 + " " + godzina_do));
+			cout << "Srednia suma produkcji: " << operacje->SredniaProdukcja((data_od1 + " " + godzina_od), (data_do1 + " " + godzina_do)) << endl;
 			break;
 		case 12: // porownywanie autokonsumpcji
-			cout << "Przedzial DD.MM.RRRR MM:HH (1.10.2020 8:00)"<<endl;
+			cout << "Przedzial DD.MM.RRRR HH:MM (1.10.2020 8:00)"<<endl;
 			cout << "OD: ";
 			cin >> data_od1;
 			cin >> godzina_od;
@@ -176,7 +176,7 @@ void Menu::WybierzOpcje()
 			cout << operacje->PorownajAutokonsumpcje(data_od1, data_do1, data_od2, data_do2);
 			break;
 		case 13: // porownanie eksportu
-			cout << "Przedzial DD.MM.RRRR MM:HH (1.10.2020 8:00)";
+			cout << "Przedzial DD.MM.RRRR HH:MM (1.10.2020 8:00)" << endl;
 			cout << "OD: ";
 			cin >> data_od1;
 			cin >> godzina_od;
@@ -197,14 +197,14 @@ void Menu::WybierzOpcje()
 			cout << operacje->PorownajEksport(data_od1, data_do1, data_od2, data_do2);
 			break;
 		case 14: // porownanie importu
-			cout << "Przedzial DD.MM.RRRR MM:HH (1.10.2020 8:00)";
+			cout << "Przedzial DD.MM.RRRR HH:MM (1.10.2020 8:00)" << endl;
 			cout << "OD: ";
 			cin >> data_od1;
 			cin >> godzina_od;
 			cout << "DO: ";
 			cin >> data_do1;
 			cin >> godzina_do;
-			cout << "Drugi przedzial: ";
+			cout << "Drugi przedzial: " << endl;
 			cout << "OD: ";
 			cin >> data_od2;
 			cin >> godzina2_od;
@@ -218,14 +218,14 @@ void Menu::WybierzOpcje()
 			cout << operacje->PorownajImport(data_od1, data_do1, data_od2, data_do2);
 			break;
 		case 15: // porownanie poboru
-			cout << "Przedzial DD.MM.RRRR MM:HH (1.10.2020 8:00)";
+			cout << "Przedzial DD.MM.RRRR HH:MM (1.10.2020 8:00)" << endl;
 			cout << "OD: ";
 			cin >> data_od1;
 			cin >> godzina_od;
 			cout << "DO: ";
 			cin >> data_do1;
 			cin >> godzina_do;
-			cout << "Drugi przedzial: ";
+			cout << "Drugi przedzial: " << endl;
 			cout << "OD: ";
 			cin >> data_od2;
 			cin >> godzina2_od;
@@ -239,14 +239,14 @@ void Menu::WybierzOpcje()
 			cout << operacje->PorownajPobor(data_od1, data_do1, data_od2, data_do2);
 			break;
 		case 16: // porownanie produkcji
-			cout << "Przedzial DD.MM.RRRR MM:HH (1.10.2020 8:00)";
+			cout << "Przedzial DD.MM.RRRR HH:MM (1.10.2020 8:00)" << endl;
 			cout << "OD: ";
 			cin >> data_od1;
 			cin >> godzina_od;
 			cout << "DO: ";
 			cin >> data_do1;
 			cin >> godzina_do;
-			cout << "Drugi przedzial: ";
+			cout << "Drugi przedzial: " << endl;
 			cout << "OD: ";
 			cin >> data_od2;
 			cin >> godzina2_od;
@@ -261,7 +261,7 @@ void Menu::WybierzOpcje()
 			break;
 		case 17: // wyszukanie rekordow
 
-			cout << "Przedzial DD.MM.RRRR MM:HH (1.10.2020 8:00)" << endl;
+			cout << "Przedzial DD.MM.RRRR HH:MM (1.10.2020 8:00)" << endl;
 			cout << "OD: ";
 			cin >> data_od1;
 			cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
@@ -287,7 +287,7 @@ void Menu::WybierzOpcje()
 			}
 			break;
 		case 18: // wypisz dane
-			cout << "Przedzial DD.MM.RRRR MM:HH (1.10.2020 8:00)";
+			cout << "Przedzial DD.MM.RRRR HH:MM (1.10.2020 8:00)" << endl;
 			cout << "OD ";
 			cin >> data_od1;
 			cin >> godzina_od;
